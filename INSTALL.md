@@ -26,3 +26,5 @@ Im Verzeichnis `darkflow/darkflow/net/yolov2/` wird die Datei `predict.py` erwei
     if self.FLAGS.tracker == "deep_sort":
 
 Die Datei `darkflow/darkflow/net/help.py` wird erweitert, die geänderte Datei findet sich unter `patches/help.py` und muss an den genannten Pfad kopiert werden.
+
+Die Datei `run.py` wird erweitert, so dass der Dateiname über `sys.argv[1]` übergeben werden kann.
