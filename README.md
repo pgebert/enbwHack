@@ -48,7 +48,7 @@ TODO UI
 
 ## Noch umzusetzende Ideen
 
-### algemein
+### allgemein
 
 * EnBW Farben
 * irgendwie auch Autos erkennen
