@@ -27,4 +27,16 @@ Im Verzeichnis `darkflow/darkflow/net/yolov2/` wird die Datei `predict.py` erwei
 
 Die Datei `darkflow/darkflow/net/help.py` wird erweitert, die geänderte Datei findet sich unter `patches/help.py` und muss an den genannten Pfad kopiert werden.
 
-Die Datei `run.py` wird erweitert, so dass der Dateiname über `sys.argv[1]` übergeben werden kann.
+Die Datei `run.py` wird erweitert, so dass der Dateiname über `sys.argv[1]` übergeben werden kann. Die angepasste Datei findet sich auch im Verzeichnis `patches`.
+
+Im Verzeichnis `darkflow/bin` (muss angelegt werden):
+
+    wget https://pjreddie.com/media/files/yolov2.weights
+
+und unter `deep_sort/` die [Datei](https://drive.google.com/file/d/1eXm0EB8r4BywqHJzaorXTSOkIfFdTq59/view) in `resources` entpacken.
+
+Vorbereitung für Webapp
+=======================
+
+    ffmpeg.exe -i 'C:\Users\patri\Desktop\dev\output_Ma
+rktplatz-20180412-111303(1).mp4' -vf fps=12 C:\Users\patri\Desktop\dev\presenter\data\video\out%d.pn
