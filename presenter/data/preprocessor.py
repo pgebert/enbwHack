@@ -10,7 +10,7 @@ def convert(infile='persons.json', outfile='data.js'):
 
     container = []
     frame_ctr = 0
-    frame_step = 4
+    frame_step = 1
 
     with open(infile) as f:
         data = ujson.load(f)       
@@ -22,7 +22,7 @@ def convert(infile='persons.json', outfile='data.js'):
                 for i in range(frame_ctr, item['frame_id']-frame_step+1, frame_step):
                     container.append({
                         "frameID": i,
-                        "persons": [],
+                        "persons": []
                     })
             frame_ctr = item['frame_id']
 
@@ -32,9 +32,11 @@ def convert(infile='persons.json', outfile='data.js'):
                 container[-1]["persons"].append(item)
             # New
             else:
+                frameID = item['frame_id']
+                del item['frame_id']
                 container.append({
-                    "frameID": item['frame_id'],
-                    "persons": [],
+                    "frameID": frameID,
+                    "persons": [item]
                 })
 
     striingified = ujson.dumps(container)
@@ -43,4 +45,4 @@ def convert(infile='persons.json', outfile='data.js'):
         text_file.write("person_data = '" + striingified + "'")
 
 if __name__ == "__main__":
-    convert()
+    convert(infile='json7.json')
