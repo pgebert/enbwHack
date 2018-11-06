@@ -34,3 +34,9 @@ Im Verzeichnis `darkflow/bin` (muss angelegt werden):
     wget https://pjreddie.com/media/files/yolov2.weights
 
 und unter `deep_sort/` die [Datei](https://drive.google.com/file/d/1eXm0EB8r4BywqHJzaorXTSOkIfFdTq59/view) in `resources` entpacken.
+
+Vorbereitung für Webapp
+=======================
+
+    ffmpeg.exe -i 'C:\Users\patri\Desktop\dev\output_Ma
+rktplatz-20180412-111303(1).mp4' -vf fps=12 C:\Users\patri\Desktop\dev\presenter\data\video\out%d.pn
