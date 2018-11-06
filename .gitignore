@@ -1,3 +1,6 @@
 presenter/data/video/
 Biberach_1
 Biberach_2
+*.npy
+*.mp4
+*.csv
