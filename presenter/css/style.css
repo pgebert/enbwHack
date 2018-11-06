@@ -131,6 +131,14 @@
     left: 5%;
 }
 
+#marketplace .area {
+    width: 30px;
+    margin-top: -160px;
+    margin-left: 20px;
+    margin-bottom: 120px;
+    display: block;
+}
+
 
 /**
 * Team section

@@ -45,4 +45,4 @@ def convert(infile='persons.json', outfile='data.js'):
         text_file.write("person_data = '" + striingified + "'")
 
 if __name__ == "__main__":
-    convert(infile='json5.json')
+    convert(infile='json7.json')

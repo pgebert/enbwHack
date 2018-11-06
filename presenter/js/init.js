@@ -17,6 +17,8 @@
         var trace0 = {
             x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             y: [60, 70, 55, 74, 101, 150, 155, 180, 146, 130, 70, 50],
+            // x: ['11:10', '11:11', '11:12', '11:13'],
+            // y: [20, 22, 19, 20],
             type: 'scatter'
         };
 
@@ -85,7 +87,7 @@
         var data = JSON.parse(person_data);
 
         // config video settings
-        var frame_step = 4;
+        var frame_step = 1;
         nbrFrames = 1300;
         fps = 12;
 
@@ -183,7 +185,7 @@
                 '<div class="card-panel red white-text lighten-1 z-depth-1 marketplace-card security">',
                 '<div class="row valign-wrapper">',
                 '<div class="col s4 m2"> <i class="material-icons">security</i></div>',
-                '<div class="col s8 m12"><span class="black-text">',
+                '<div class="col s8 m12"><span class="white-text">',
                 'Alert: Person ' + personID + ' has entered unauthorized the restricted area!',
                 '</span></div>',
                 '</div>',
