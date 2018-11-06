@@ -104,6 +104,10 @@
     margin-top: -50px;
 }
 
+#marketplace #video {
+    margin-top: 55px;
+}
+
 .marketplace-card {
     height: 80px;
 }
@@ -118,9 +122,21 @@
     margin-left: 10px;
 }
 
+.marketplace-card.security span {
+    margin-left: 0!important;
+}
+
 .marketplace-video-btn {
     top: -32px;
     left: 5%;
+}
+
+#marketplace .area {
+    width: 30px;
+    margin-top: -160px;
+    margin-left: 20px;
+    margin-bottom: 120px;
+    display: block;
 }
 
 
