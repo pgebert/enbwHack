@@ -1,12 +1,36 @@
 # EnBW Hackathon - Gruppe Torsionspendel
 
-## Einführung
+## Usecase 1 - Analyse von Gruppenverhalten und Gruppenkonstellationen im Themenumfeld computer vision
 
-Wir bearbeiten Usecase 1: Erkennung von speziellen Situationen im Kontext von Öffentlicher Sicherheit mittels computer vision.
+Unser Projekt nutzt das `deep_sort` Verfahren. Dadurch sind wir in der Lage Personen auf öffentlichen Plätzen zu `tracken` und so zuverlässig Geschwindigkeiten zu bestimmen. Zusätzlich kann über die für das Tracking genutzten Bounding Boxen die Anzahl der Personen ermittelt werden. Die Analyse kann sowohl in Echtzeit als auch auf historischen Daten erfolgen. Die Ergebnisse sind über eine Benutzeroberfläche einsehbar.
+
+Die erhobenen Daten können von öffentlichen Institutionen für verschiedene Zwecke eingesetzt werden:
+
+* Zählung von Personen auf öffentlichen Plätzen (umgesetzt)
+* Fluchterkennung (umgesetzt)
+* Betreten verbotener Bereiche (umgesetzt)
+* Erkennung unbewegter Personen, z.B. bei einem Unfall
+* Verkehrsplanung
+
+Die Daten werden aggregiert, so dass auch Entwicklungen über die Zeit deutlich werden und nachvollzogen werden können.
+
+
 
 Wir haben mithilfe von YOLOv2 die bereitgestellten Videos von dem Marktplatz in Biberach analysiert und die Personen getaggt, indem wir über jede Person eine BoundingBox gelegt haben. Ein Beispielvideo zeigt dieses Tracking in Echtzeit. Aus dem Tracken der Personen können wir verschiedene Daten ableiten, wie die aktuelle Geschwindigkeit und langes verweilen auf einem Platz. Außerdem kann direkt erkannt werden, ob eine Person einen gesperrten Bereich betritt, zum Beispiel eine Baustelle. Zudem können wir immer die aktuelle Anzahl an Personen auf dem Platz bestimmen und in Relation mit anderen Werten setzen.
 
-## Verarbeitung
+
+## Verarbeitungspipeline
+
+Die Verarbeitung gliedert sich in die folgenden Schritte, diese werden im Folgenden detailliert:
+
+    Videomaterial 
+          -> deep_sort 
+                 -> Video mit Bouding Boxes 
+                         -> UI
+                 -> CSV-Datei mit Tracking Informationen
+                         -> JupyterNotebook
+                                 -> JSON
+                                       -> UI
 
 ### Videoverarbeitung
 
@@ -24,7 +48,7 @@ x,y sind die Koordinaten der oberen Ecke der BoundingBox in Pixel. Das Video hat
 
 w,h sind die Größe der BoundingBox.
 
-### Analysen
+### Analysen / JupyterNotebook
 
 Die CSV nutzen wir für unsere Analysen. Zum einen bestimmen wir die aktuelle Anzahl an Personen pro Frame. Daraus können wir eine Zeitreihenanalyse machen und feststellen, wenn auffallend viele/wenige Personen zu einer bestimmten Uhrzeit auf dem Marktplatz sind. Wenn hier Auffälligkeiten vorliegen, kann direkt die Security alarmiert werden und mehr Streifen auf den Platz geschickt werden.
 
@@ -58,15 +82,9 @@ Die UI ist für die Stadt gedacht.
 
 ## Ausblick
 
-
-
-Die Übertragung der Videoerkennung auf andere Bereiche ist leicht umsetzbar - man muss dazu nur anderes Videomaterial verwenden und die Entfernungen neu ausmessen. So kann zum Beispiel ein Übertritt des Baches in der Eingangshalle der EnBW direkt detektiert werden.
-
-
+Die Übertragung der Videoerkennung auf andere Bereiche ist leicht umsetzbar - man muss dazu nur anderes Videomaterial verwenden und die Entfernungen neu ausmessen. So könnte zum Beispiel ein Übertritt des Baches in der Eingangshalle der EnBW direkt detektiert werden.
 
 Die Stadt kann unsere Zeitreihenanalyse nutzen, um den ÖPNV zu verbessern.
-
-
 
 Leider konnten wir nicht mehr umsetzen, dass eine Person lange an einem Ort stehen bleibt, da dazu das Netz nicht ausreichend trainiert ist. Die Brunnenstatue oder fest installierte Gegenstände wie die Eiswaffel werden kontinuierlich als Person betrachtet und müssten zuerst rausgerechnet werden.
 
