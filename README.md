@@ -2,7 +2,7 @@
 
 ## Usecase 1 - Analyse von Gruppenverhalten und Gruppenkonstellationen im Themenumfeld computer vision
 
-Unser Projekt nutzt das `deep_sort` Verfahren. Dadurch sind wir in der Lage Personen auf öffentlichen Plätzen zu `tracken` und so zuverlässig Geschwindigkeiten zu bestimmen. Zusätzlich kann über die für das Tracking genutzten Bounding Boxen die Anzahl der Personen ermittelt werden. Die Analyse kann sowohl in Echtzeit als auch auf historischen Daten erfolgen. Die Ergebnisse sind über eine Benutzeroberfläche einsehbar.
+Unser Projekt nutzt das `deep_sort` Verfahren. Dadurch sind wir in der Lage Personen auf öffentlichen Plätzen zu _tracken_ und so zuverlässig Geschwindigkeiten zu bestimmen. Zusätzlich kann über die für das Tracking genutzten Bounding Boxen die Anzahl der Personen ermittelt werden. Die Analyse kann sowohl in Echtzeit als auch auf historischen Daten erfolgen. Die Ergebnisse sind über eine Benutzeroberfläche einsehbar.
 
 Die erhobenen Daten können von öffentlichen Institutionen für verschiedene Zwecke eingesetzt werden:
 
