@@ -89,9 +89,11 @@ Die Hauptansicht ist das aufgenommene und annotierte Video mit den berechneten D
 
 Die Übertragung der Videoerkennung auf andere Bereiche ist leicht umsetzbar - man muss dazu nur anderes Videomaterial verwenden und die Entfernungen neu ausmessen. So könnte zum Beispiel ein Übertritt des Baches in der Eingangshalle der EnBW direkt detektiert werden.
 
+Eine Erweiterung des Trackings auf andere Gegenstände wie Autos ist einfach umzusetzen, allerdings haben wir uns zuerst auf Personen fokussiert.
+
 Die Stadt kann unsere Zeitreihenanalyse nutzen, um den ÖPNV zu verbessern.
 
-Leider konnten wir nicht mehr umsetzen, dass eine Person lange an einem Ort stehen bleibt, da dazu das Netz nicht ausreichend trainiert ist. Die Brunnenstatue oder fest installierte Gegenstände wie die Eiswaffel werden kontinuierlich als Person betrachtet und müssten zuerst rausgerechnet werden.
+Leider konnten wir nicht mehr umsetzen, dass eine Person lange an einem Ort stehen bleibt. Die Brunnenstatue oder fest installierte Gegenstände wie die Eiswaffel werden kontinuierlich als Person betrachtet. Dazu müsste man zuerst das ganze Netz neu trainieren, wozu wir weder Zeit noch Rechenkapazitäten hatten.
 
 
 
