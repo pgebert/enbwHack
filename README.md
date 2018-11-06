@@ -1,4 +1,4 @@
-# EnBW Hackathon - Gruppe Torsionspendel
+# EnBW Hackathon - Gruppe CitySafety
 
 ## Usecase 1 - Analyse von Gruppenverhalten und Gruppenkonstellationen im Themenumfeld computer vision
 
@@ -14,17 +14,14 @@ Die erhobenen Daten können von öffentlichen Institutionen für verschiedene Zw
 
 Die Daten werden aggregiert, so dass auch Entwicklungen über die Zeit deutlich werden und nachvollzogen werden können.
 
-
-
-Wir haben mithilfe von YOLOv2 die bereitgestellten Videos von dem Marktplatz in Biberach analysiert und die Personen getaggt, indem wir über jede Person eine BoundingBox gelegt haben. Ein Beispielvideo zeigt dieses Tracking in Echtzeit. Aus dem Tracken der Personen können wir verschiedene Daten ableiten, wie die aktuelle Geschwindigkeit und langes verweilen auf einem Platz. Außerdem kann direkt erkannt werden, ob eine Person einen gesperrten Bereich betritt, zum Beispiel eine Baustelle. Zudem können wir immer die aktuelle Anzahl an Personen auf dem Platz bestimmen und in Relation mit anderen Werten setzen.
-
+![UI](img/screenshot.png)
 
 ## Verarbeitungspipeline
 
 Die Verarbeitung gliedert sich in die folgenden Schritte, diese werden im Folgenden detailliert:
 
     Videomaterial 
-          -> deep_sort 
+          -> deep_sort (Ausgabe: Video & CSV)
                  -> Video mit Bouding Boxes 
                          -> UI
                  -> CSV-Datei mit Tracking Informationen
@@ -34,7 +31,12 @@ Die Verarbeitung gliedert sich in die folgenden Schritte, diese werden im Folgen
 
 ### Videoverarbeitung
 
-Für die Verarbeitung der Videos nutzen wir ein vortrainiertes neuronales Netz.
+Die Videos werden mit einem (angepassten) [Tracking](https://github.com/bendidi/Tracking-with-darkflow) Framework verarbeitet. Details zu dem Anpassungen sind in [INSTALL](INSTALL.md).
+
+![Netzwerk](presenter/img/network.png)
+
+Das Framework setzt auf YOLOv2 auf. Die bereitgestellten Videos vom Marktplatz in Biberach werden analysiert und die Personen werden anhand ihrer BoundingBox getrackt. Über das Tracking können verschiedene Daten abgeleitet werden, zum Beispiel, ob die Geschwindigkeiten der Personen oder ob diese einen gesperrten Bereich betritt. 
+Wir haben mithilfe von YOLOv2 die bereitgestellten Videos von dem Marktplatz in Biberach analysiert und die Personen getaggt, indem wir über jede Person eine BoundingBox gelegt haben. Ein Beispielvideo zeigt dieses Tracking in Echtzeit. Zudem kann immer die aktuelle Anzahl an Personen auf dem Platz bestimmt und in Relation mit anderen Werten gesetzt werden.
 
 ### CSV Datei
 
@@ -84,9 +86,11 @@ Die UI ist für die Stadt gedacht.
 
 Die Übertragung der Videoerkennung auf andere Bereiche ist leicht umsetzbar - man muss dazu nur anderes Videomaterial verwenden und die Entfernungen neu ausmessen. So könnte zum Beispiel ein Übertritt des Baches in der Eingangshalle der EnBW direkt detektiert werden.
 
+Eine Erweiterung des Trackings auf andere Gegenstände wie Autos ist einfach umzusetzen, allerdings haben wir uns zuerst auf Personen fokussiert.
+
 Die Stadt kann unsere Zeitreihenanalyse nutzen, um den ÖPNV zu verbessern.
 
-Leider konnten wir nicht mehr umsetzen, dass eine Person lange an einem Ort stehen bleibt, da dazu das Netz nicht ausreichend trainiert ist. Die Brunnenstatue oder fest installierte Gegenstände wie die Eiswaffel werden kontinuierlich als Person betrachtet und müssten zuerst rausgerechnet werden.
+Leider konnten wir nicht mehr umsetzen, dass eine Person lange an einem Ort stehen bleibt. Die Brunnenstatue oder fest installierte Gegenstände wie die Eiswaffel werden kontinuierlich als Person betrachtet. Dazu müsste man zuerst das ganze Netz neu trainieren, wozu wir weder Zeit noch Rechenkapazitäten hatten.
 
 
 
