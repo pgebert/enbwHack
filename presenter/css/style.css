@@ -1,0 +1,153 @@
+/* Custom Stylesheet */
+
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+/**
+ * Town graph section
+ */
+
+.town-graph {
+    width: 450px;
+    margin: auto;
+    display: block;
+}
+
+#town_plot {
+    height: 300px;
+    margin-top: -60px;
+}
+
+.town_plot_btn {
+    top: 70px;
+}
+
+
+/**
+* Experimental
+*/
+
+#town .placeholder {
+    position: relative;
+    height: 350px;
+}
+
+#town .town-graph {
+    position: absolute;
+    top: 350px;
+    margin: auto;
+    display: block;
+    left: 50%;
+    margin-left: -161px;
+}
+
+#town .car0 {
+    top: 582px;
+    margin-right: -148px;
+    animation: straightLine0 6s infinite linear;
+}
+
+@keyframes straightLine0 {
+    50% {
+        transform: translate3D(30px, -60px, 0);
+    }
+}
+
+#town .car1 {
+    top: 582px;
+    margin-right: -85px;
+    animation: straightLine1 10s infinite linear;
+}
+
+@keyframes straightLine1 {
+    50% {
+        transform: translate3D(-160px, -80px, 0);
+    }
+}
+
+#town .car2 {
+    top: 463px;
+    margin-right: -125px;
+    animation: straightLine2 10s infinite linear;
+}
+
+@keyframes straightLine2 {
+    50% {
+        transform: translate3D(-175px, 0px, 0);
+    }
+}
+
+#town .car3 {
+    top: 372px;
+    margin-right: -286px;
+}
+
+.car {
+    position: absolute;
+    right: 50%;
+    width: 50px;
+}
+
+
+/**
+* Marketplace section
+*/
+
+#marketplace {
+    min-height: 800px;
+    margin-top: -50px;
+}
+
+.marketplace-card {
+    height: 80px;
+}
+
+.marketplace-card img {
+    height: 40px;
+    width: 40px;
+    max-width: none;
+}
+
+.marketplace-card span {
+    margin-left: 10px;
+}
+
+.marketplace-video-btn {
+    top: -32px;
+    left: 5%;
+}
+
+
+/**
+* Team section
+*/
+
+.team-avatar {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+
+/**
+ * Other
+*/
+
+.valign-wrapper {
+    margin-bottom: 0px;
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
