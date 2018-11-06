@@ -38,36 +38,23 @@ Die UI ist für die Stadt gedacht.
 
 ## TimeLine
 
-![timeline](img/timeline.png)
-
-
 * 12:00 Startschuss
-
 * 14:10 Tracking funktioniert
-
 * 15:36 CSV generiert
-
 * 16:32 Video mit Tracking-Info in Echtzeit
-
 * 18:00 Geschwindigkeitserkennung
-
-* 18:30 Brainstorming - neue Ideen für Usecases
-
-* 19:30 erkennung von FahrrÃ€dern und besonders schnellen Personen
-
-* 20:20 Dateiexport in JSON
-
-* 21:35 Test: Tracking funktioniert auch Nachts
-
+* 18:30 Brainstorming
+* 19:30 Erkennung Fahrräder / schnelle Personen
+* 20:20 Datenexport JSON für UI
+* 21:35 Test: Tracking funktioniert auch nachts
 * 23:15 Baustellenerkennung
-
-* 00:30 Meeting - weiteres Vorgehen im Gesamtkontext
-
+* 00:30 Meeting - weiteres Vorgehen
 * 01:00 Thread.sleep()
-
 * 07:30 Frühstück
-
-
+* 08:35 Finales Video
+* 09:42 Pflege Git-Repo
+* 11:30 Fertigstellung UI
+* 11:45 Abgabe
 
 ## Ausblick
 
