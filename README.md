@@ -16,6 +16,8 @@ Die Daten werden aggregiert, so dass auch Entwicklungen über die Zeit deutlich 
 
 ![UI](img/screenshot.png)
 
+See our prototype demo at https://pgebert.github.io/enbwHack/.
+
 ## Verarbeitungspipeline
 
 Die Verarbeitung gliedert sich in die folgenden Schritte, diese werden im Folgenden detailliert:
