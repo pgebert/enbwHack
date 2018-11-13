@@ -2,7 +2,7 @@
 
 ## Usecase 1 - Analyse von Gruppenverhalten und Gruppenkonstellationen im Themenumfeld computer vision
 
-Unser Projekt nutzt das `deep_sort` Verfahren. Dadurch sind wir in der Lage Personen auf öffentlichen Plätzen zu `tracken` und so zuverlässig Geschwindigkeiten zu bestimmen. Zusätzlich kann über die für das Tracking genutzten Bounding Boxen die Anzahl der Personen ermittelt werden. Die Analyse kann sowohl in Echtzeit als auch auf historischen Daten erfolgen. Die Ergebnisse sind über eine Benutzeroberfläche einsehbar.
+Unser Projekt nutzt das `deep_sort` Verfahren. Dadurch sind wir in der Lage Personen auf öffentlichen Plätzen zu _tracken_ und so zuverlässig Geschwindigkeiten zu bestimmen. Zusätzlich kann über die für das Tracking genutzten Bounding Boxen die Anzahl der Personen ermittelt werden. Die Analyse kann sowohl in Echtzeit als auch auf historischen Daten erfolgen. Die Ergebnisse sind über eine Benutzeroberfläche einsehbar.
 
 Die erhobenen Daten können von öffentlichen Institutionen für verschiedene Zwecke eingesetzt werden:
 
@@ -40,29 +40,32 @@ Wir haben mithilfe von YOLOv2 die bereitgestellten Videos von dem Marktplatz in 
 
 ### CSV Datei
 
-Aus jedem Video erzeugen wir eine CSV-Datei mit folgenden Daten: (frame_id,track_id,x,y,w,h) .
+Aus jedem Video erzeugen wir eine CSV-Datei mit folgenden Daten: 
 
-Die frame_id ist die ID des Frames - die Videos haben eine Rate von 30 fps, teilweiße skippen wir beim Einlesen einige Frames.
+    (frame_id,track_id,x,y,w,h)
 
-Die track_id ist die ID jeder Person, die von YOLO erkannt wird.
-
-x,y sind die Koordinaten der oberen Ecke der BoundingBox in Pixel. Das Video hat die Größe 1920 * 1080.
-
-w,h sind die Größe der BoundingBox.
+Die `frame_id` ist die ID des Frames im verarbeiteten Video.  
+Die `track_id` ist die ID jeder Person, die von YOLO erkannt wird.  
+`x,y` sind die Koordinaten der oberen Ecke der BoundingBox in Pixel. Das Video hat die Größe 1920 * 1080.
+`w,h` sind die Größe der BoundingBox.
 
 ### Analysen / JupyterNotebook
 
 Die CSV nutzen wir für unsere Analysen. Zum einen bestimmen wir die aktuelle Anzahl an Personen pro Frame. Daraus können wir eine Zeitreihenanalyse machen und feststellen, wenn auffallend viele/wenige Personen zu einer bestimmten Uhrzeit auf dem Marktplatz sind. Wenn hier Auffälligkeiten vorliegen, kann direkt die Security alarmiert werden und mehr Streifen auf den Platz geschickt werden.
 
-Eine andere Anwendung ist die Bestimmung der Geschwindigkeiten, mit der sich bestimmte Gegenstände bewegen. Diese haben wir grob per Entfernungsmessung aus Google Maps in kmh umgerechnet. So kann bestimmt werden, wenn sich Radfahrer besonders schnell bewegen. Flüchtende Personen sind auch ein Problem, das so detektiert werden kann.
+Eine andere Anwendung ist die Bestimmung der Geschwindigkeiten, mit der sich bestimmte Gegenstände bewegen. Diese haben wir grob per Entfernungsmessung aus Google Maps in km/h umgerechnet. So kann bestimmt werden, wenn sich Radfahrer besonders schnell bewegen. Flüchtende Personen sind auch ein Problem, das so detektiert werden kann.
 
-Diese Daten werden in einem json Dokument an die UI weitergeleitet.
+Diese Daten werden in einem JSON Dokument an die UI weitergeleitet.
 
 ### UI
 
-Die UI ist für die Stadt gedacht. 
+Die UI ist für die Stadt Biberach / andere Gemeinenden oder Institutionen mit Sicherheitsbedürfnissen gedacht. Technisch setzt die UI auf _jQuery_ und _Materialized CSS_ auf.
 
-## TimeLine
+Die UI ermöglicht neben der Ansicht der beschriebenen Daten auch einen Blick auf das Busnetz - sind zum Beispiel an einem Platz ungewöhnliche viele Personen können zusätzliche Busse eingesetzt werden.
+
+Die Hauptansicht ist das aufgenommene und annotierte Video mit den berechneten Daten. Zu jeder Person ist die Geschwindigkeit zu sehen. Zusätzlich gibt es eine Meldung, wenn ein abgesperrter Bereich betreten wird (im Video rot markiert).
+
+## Timeline
 
 * 12:00 Startschuss
 * 14:10 Tracking funktioniert

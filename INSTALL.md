@@ -38,5 +38,4 @@ und unter `deep_sort/` die [Datei](https://drive.google.com/file/d/1eXm0EB8r4Byw
 Vorbereitung für Webapp
 =======================
 
-    ffmpeg.exe -i 'C:\Users\patri\Desktop\dev\output_Ma
-rktplatz-20180412-111303(1).mp4' -vf fps=12 C:\Users\patri\Desktop\dev\presenter\data\video\out%d.pn
+    ffmpeg.exe -i 'C:\Users\patri\Desktop\dev\output_Marktplatz-20180412-111303(1).mp4' -vf fps=12 C:\Users\patri\Desktop\dev\presenter\data\video\out%d.pn
